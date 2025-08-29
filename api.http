@@ -1,0 +1,27 @@
+### Create Order - REST API
+POST http://localhost:8000/order
+Content-Type: application/json
+
+{
+  "price": 100.0,
+  "tax": 10.0
+}
+
+### List Orders - REST API
+GET http://localhost:8000/order
+
+### Create Order - GraphQL
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "mutation { createOrder(price: 150.0, tax: 15.0) { id price tax final_price } }"
+}
+
+### List Orders - GraphQL
+POST http://localhost:8080/graphql
+Content-Type: application/json
+
+{
+  "query": "{ listOrders { id price tax final_price } }"
+}
